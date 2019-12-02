@@ -10,5 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///storage.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_maneger = LoginManager(app)
+login_maneger.login_view = 'login'
+
 
 from app.controllers import default
