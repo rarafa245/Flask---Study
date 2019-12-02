@@ -1,9 +1,8 @@
-#Rotas
+from app import app, bcrypt, db
 from flask import render_template, url_for, flash, redirect
-from app import app
 from .form import RegistrationForm, LoginForm
-
-app.config['SECRET_KEY'] = '123'
+from app.models import User, Post
+from flask_login import login_user
 
 posts = [
     {
@@ -33,8 +32,12 @@ def about():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash(f'Acount created for {form.username.data} !', 'success')
-        return redirect(url_for('home'))
+        hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(username=form.username.data, email=form.email.data, password=hashed_pw)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your Acount Has Been Created !', 'success')
+        return redirect(url_for('login'))
     else:
         return render_template('register.html', title="Register", form=form)
 
@@ -42,10 +45,10 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == "rafael@logpyx.com" and form.password.data == "128Parsecs!":
-            flash('You have been logged in!', 'success')
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.remember.data)
             return redirect(url_for('home'))
         else:
             flash('Loggin Unsuccessful. Check Email ou Password!', 'danger')
-            return redirect(url_for('home'))
     return render_template('login.html', title="Register", form=form)
