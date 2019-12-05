@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff129bb8-a922-499e-855f-fe551aa4dab1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/profiles_pic/default.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/default.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/storage.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/storage.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/account.html" afterDir="false" />
     </list>
