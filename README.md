@@ -2,7 +2,7 @@
 ## Project Using Flask Framework  
     
   Backend project for study in **Flask framework**.  
-  Using **Bootstrap 4** for Frontend.
+  Using **Bootstrap 4** in Frontend.
   
 <p align="center">
     <img width="380" height="300" src="https://github.com/rarafa245/Flask---Study/blob/master/screens/logIn_screen.png">
